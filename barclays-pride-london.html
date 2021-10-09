@@ -1,0 +1,825 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"e7fb1b89a0",applicationID:"750147145"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name=keywords  content="Adobe Portfolio,Barclays,pride,London,LGBT,bus,doubledecker,gay" />
+      <meta name=description  content="Identity and Event design for Pride London 2014 and 2015, as Barclays leads the parade as the primary sponsor and one of UK's most inclusive businesses when it comes to diversity and inclusionn " />
+      <meta name=twitter:card  content="summary_large_image" />
+      <meta name=twitter:site  content="@AdobePortfolio" />
+       <meta property=og:title content="Eduardo Robles Portfolio | Graphic Design, Illustration, Art Direction - iDBUS campaign" />
+  <meta property=og:description content="#dropeverything
+A viral campaign launched at the LSE student union in London, challenging student to drop everything and go spend the weekend in Paris... If they can get ready in 30mn." />
+  <meta property=og:image content="logo2.png" />
+  <meta name=robots content="noindex" />
+  <link rel="icon" href="logo2.png" />
+  <link rel="apple-touch-icon" href="" />
+  <link rel="stylesheet" href="/dist/css/main.css" type="text/css" />
+  <link rel="stylesheet" href="https://pro2-bar-s3-cdn-cf1.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/27e21e3e82aed358dd43c7d055078eee1574790940.css?h=cd5a6f2494bbeb57ec02fbbd5320b152" type="text/css" />
+  <link rel="canonical" href="" />
+  <title>Eduardo Robles Portfolio | Web Design, Illustration, Art Direction - iDBUS campaign</title>
+    <script type="text/javascript" src="//use.typekit.net/ik/eg-lwSIq8gC5_4K-695s3U7ytXekVcy1nYbm71fHPmIfenwffHYEBsJzwD9oFDIDWhIDZRboZe9tZcjXjRbu5ABqFDjojh4KFRJhZ2qtwesywD93FRMUwDq-qMI7OcuoSeNkieZzde8zOcFzdP37O1gkdDJlic88ikolpWgzS1scdhUTdkoRdhXCHKokdhuy-AocZW4kZWJ0jhNlOeuoSeNkieZzde8zOcFzdPU3ScvkOWZTZWS0dW83da4XZcNC-Av0jhNlOY4zdABTdcZ8S148SKoRdhXCiaiaO14zdABTdcZ8S148SKoRdhXKgeilShGKgeU1dWjKgYZRShX7fbRs2UMMeMS6MPGHfwKnMsMgeMb6MPGHfw-nMsMgeM96MPGHfw7nMsMgeMj6MPGHfOEnMsMgeMS6MPGHfwEnMsMgeMq6MPG4fHvgIMJjgfMgqMeiDzW0gb.js?cb=" async onload="
+    try {
+      window.Typekit.load();
+    } catch (e) {
+      console.warn('Typekit not loaded.');
+    }
+    "></script>
+    <style>
+    .page-header .title {
+      color: #ffffff;
+      font-family: Arial;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 30px;
+      padding-bottom: 0px;
+      padding-top: 0px;
+      text-align: left;
+      text-transform: uppercase;
+      width: 100%;
+    }
+
+    .page-header .description {
+      color: #ffffff;
+      font-family: Arial;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 18px;
+      padding-bottom: 0px;
+      padding-top: 20px;
+      text-align: left;
+      text-transform: none;
+      width: 100%;
+    }
+
+    .project-cover .title {
+      color: #0020d1;
+      float: left;
+      font-family: Arial;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 30px;
+      padding-bottom: 12px;
+      padding-left: 0%;
+      padding-right: 0%;
+      padding-top: 0px;
+      text-align: left;
+      text-transform: uppercase;
+      width: 100%;
+    }
+
+    .preserve-whitespace {
+      white-space: pre-wrap;
+    }
+
+    .project-cover .description {
+      color: #0020d1;
+      float: left;
+      font-family: Arial;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 18px;
+      padding-bottom: 0px;
+      padding-left: 0%;
+      padding-right: 0%;
+      padding-top: 0px;
+      text-align: left;
+      text-transform: none;
+      width: 100%;
+    }
+
+    nav .page-title a {
+      color: rgb(243, 195, 204);
+      font-family: Arial;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 28px;
+      text-transform: uppercase;
+    }
+
+    .hamburger {
+      position: relative;
+      width: 24px;
+    }
+
+    .site-footer {
+      font-family: Arial;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 19px;
+      padding-bottom: 17px;
+      padding-left: 0px;
+      padding-right: 0px;
+      padding-top: 50px;
+      text-align: center;
+      text-transform: none;
+      width: 100%;
+    }
+  </style>
+</head>
+        <body class="transition-enabled">  <div class='page-background-video '>
+  </div>
+  <div class="js-responsive-nav">
+    <div class="responsive-nav has-social">
+      <div class="close-responsive-click-area js-close-responsive-nav">
+        <div class="close-responsive-button"></div>
+      </div>
+          <div class="nav-container">
+            <nav class="js-editable-target editable">
+      <div class="page-title">
+        <a href="/contact-2" >Contacto</a>
+      </div>
+                <div class="social pf-nav-social">
+                  <ul>
+                          <li>
+                <a href="https://twitter.com/Eduroes" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 30 24" xml:space="preserve" class="icon"><path d="M24.71 5.89C24 6.2 23.2 6.4 22.4 6.53c0.82-0.5 1.45-1.29 1.75-2.23c-0.77 0.46-1.62 0.8-2.53 1 C20.92 4.5 19.9 4 18.7 4c-2.2 0-3.99 1.81-3.99 4.04c0 0.3 0 0.6 0.1 0.92C11.54 8.8 8.6 7.2 6.6 4.7 C6.3 5.3 6.1 6 6.1 6.77c0 1.4 0.7 2.6 1.8 3.36c-0.65-0.02-1.27-0.2-1.81-0.51c0 0 0 0 0 0.1 c0 2 1.4 3.6 3.2 3.96c-0.34 0.09-0.69 0.14-1.05 0.14c-0.26 0-0.51-0.03-0.75-0.07c0.51 1.6 2 2.8 3.7 2.8 c-1.36 1.08-3.08 1.73-4.95 1.73c-0.32 0-0.64-0.02-0.95-0.06C7.05 19.3 9.1 20 11.4 20c7.33 0 11.34-6.15 11.34-11.49 c0-0.18 0-0.35-0.01-0.52C23.5 7.4 24.2 6.7 24.7 5.89z" /></svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/eduardoroblesespinosa/" target="_blank">
+                  <svg version="1.1" id="Svg1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                  <path id="path1" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
+                                c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
+                                C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z" />
+
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/eduardo.r.espinosa.9/" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 30 24" xml:space="preserve" class="icon"><path d="M16.21 20h-3.26v-8h-1.63V9.24h1.63V7.59c0-2.25 0.92-3.59 3.53-3.59h2.17v2.76H17.3 c-1.02 0-1.08 0.39-1.08 1.11l0 1.38h2.46L18.38 12h-2.17V20z" /></svg>
+                </a>
+              </li>
+                  </ul>
+                </div>
+            </nav>
+          </div>
+    </div>
+  </div>
+  <div class="site-wrap cfix js-site-wrap">
+    <div class="site-container">
+      <div class="site-content">
+        <header class="site-header">
+          <div class="logo-container">
+              <div class="logo-wrap js-editable-target editable">
+                    <div class="logo logo-image has-rollover ">
+    <a href="https://eduardoroblesespinosa.github.io/er./" class="image-normal image-link">
+                  <img src="logo.png" alt="">
+                </a>
+                <a href="https://eduardoroblesespinosa.github.io/er./" class="image-rollover image-link">
+                  <img src="logo2.png" alt="">
+                </a>
+</div>
+              </div>
+  <div class="hamburger-click-area js-hamburger">
+    <div class="hamburger">
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+  </div>
+          </div>
+              <div class="nav-container">
+                <nav class="js-editable-target editable">
+      <div class="page-title">
+        <a href="/contact-2" >Contacto</a>
+      </div>
+                    <div class="social pf-nav-social">
+                      <ul>
+                              <li>
+                <a href="https://twitter.com/Eduroes" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 30 24" xml:space="preserve" class="icon"><path d="M24.71 5.89C24 6.2 23.2 6.4 22.4 6.53c0.82-0.5 1.45-1.29 1.75-2.23c-0.77 0.46-1.62 0.8-2.53 1 C20.92 4.5 19.9 4 18.7 4c-2.2 0-3.99 1.81-3.99 4.04c0 0.3 0 0.6 0.1 0.92C11.54 8.8 8.6 7.2 6.6 4.7 C6.3 5.3 6.1 6 6.1 6.77c0 1.4 0.7 2.6 1.8 3.36c-0.65-0.02-1.27-0.2-1.81-0.51c0 0 0 0 0 0.1 c0 2 1.4 3.6 3.2 3.96c-0.34 0.09-0.69 0.14-1.05 0.14c-0.26 0-0.51-0.03-0.75-0.07c0.51 1.6 2 2.8 3.7 2.8 c-1.36 1.08-3.08 1.73-4.95 1.73c-0.32 0-0.64-0.02-0.95-0.06C7.05 19.3 9.1 20 11.4 20c7.33 0 11.34-6.15 11.34-11.49 c0-0.18 0-0.35-0.01-0.52C23.5 7.4 24.2 6.7 24.7 5.89z" /></svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/eduardoroblesespinosa/" target="_blank">
+                  <svg version="1.1" id="Svg2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                  <path id="path2" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
+                                c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
+                                C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z" />
+
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/eduardo.r.espinosa.9/" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 30 24" xml:space="preserve" class="icon"><path d="M16.21 20h-3.26v-8h-1.63V9.24h1.63V7.59c0-2.25 0.92-3.59 3.53-3.59h2.17v2.76H17.3 c-1.02 0-1.08 0.39-1.08 1.11l0 1.38h2.46L18.38 12h-2.17V20z" /></svg>
+                </a>
+              </li>
+                      </ul>
+                    </div>
+                </nav>
+              </div>
+        </header>
+        <main>
+  <div class="page-container js-editable-target editable" data-context="page.page.container">
+    <section class="page standard-modules">
+        <header class="page-header content js-editable-target editable" data-context="pages" data-identity="id:p57af8949df95fc7162857e4db3cf6af0f1c60f9219905d1edd817" data-menu="Page Header">
+            <h1 class="title preserve-whitespace">Barclays Pride London</h1>
+            <p class="description">Identity and Event design for Pride London 2014 and 2015, as Barclays leads the parade as the primary sponsor and one of UK's most inclusive businesses when it comes to diversity and inclusionn </p>
+        </header>
+      <div class="page-content js-page-content js-editable-target editable" data-context="pages" data-identity="id:p57af8949df95fc7162857e4db3cf6af0f1c60f9219905d1edd817" data-menu="Page Content">
+        <div id="project-canvas" class="js-project-modules modules content">
+          <div id="project-modules">
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module" >
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/aad11343c7a9f02cf8613939.jpg?h=1d4519976fcb1944db79653b6fee76c2">
+           <img
+             class="js-lazy"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/aad11343c7a9f02cf8613939_rw_3840.jpg?h=2a4f6648801208f3f252b91f5fee21e7"
+             data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/aad11343c7a9f02cf8613939_rw_600.jpg?h=546e442ae2ae27ce8a1bb496e1a7b848 600w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/aad11343c7a9f02cf8613939_rw_1200.jpg?h=b7b62549499c045285b031843f50b5ff 1200w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/aad11343c7a9f02cf8613939_rw_1920.jpg?h=092116e831763a155f1b5ad0e1e69dd2 1920w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/aad11343c7a9f02cf8613939_rw_3840.jpg?h=2a4f6648801208f3f252b91f5fee21e7 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 56.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module" >
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/aa3201e5ef1525e93368c6d4.jpg?h=6b41bae402bc75ff28a99db25eeb74de">
+           <img
+             class="js-lazy"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/aa3201e5ef1525e93368c6d4_rw_3840.jpg?h=f3996fbd235db85333d2039e92d241d4"
+             data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/aa3201e5ef1525e93368c6d4_rw_600.jpg?h=596007ee5107a2d5a55c5cd34cb2641e 600w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/aa3201e5ef1525e93368c6d4_rw_1200.jpg?h=afb532f255758b874184c8db8ea5c367 1200w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/aa3201e5ef1525e93368c6d4_rw_1920.jpg?h=02b3c5b09f33e74af3df5a237b2da6e5 1920w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/aa3201e5ef1525e93368c6d4_rw_3840.jpg?h=f3996fbd235db85333d2039e92d241d4 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 56.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module" >
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/b0f5295cdfe6873bdb0fa495.jpg?h=0a55932be72aa4029697c9e0cce26090">
+           <img
+             class="js-lazy"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/b0f5295cdfe6873bdb0fa495_rw_3840.jpg?h=9a8c7190eb3a9fea1689d6200cb852c2"
+             data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/b0f5295cdfe6873bdb0fa495_rw_600.jpg?h=17b9d26aa64ffd0306b6d98cacd3fdc8 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/b0f5295cdfe6873bdb0fa495_rw_1200.jpg?h=849f01fdb27d649658c194454c381826 1200w,https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/b0f5295cdfe6873bdb0fa495_rw_1920.jpg?h=d0a9dc6740a48257ae6a778d94777747 1920w,https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/b0f5295cdfe6873bdb0fa495_rw_3840.jpg?h=9a8c7190eb3a9fea1689d6200cb852c2 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 56.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module" >
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/aa5600f04b915a88b2e5d7c3.jpg?h=024520412f87e2b37b521d2106e7bb13">
+           <img
+             class="js-lazy"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/aa5600f04b915a88b2e5d7c3_rw_3840.jpg?h=dcdfed4c0761a476dedcd24011e6fc7c"
+             data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/aa5600f04b915a88b2e5d7c3_rw_600.jpg?h=f96661084d0f3224e0f74e889241be3e 600w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/aa5600f04b915a88b2e5d7c3_rw_1200.jpg?h=5b963facdfcb8e6387b1d5ea8fa6bb86 1200w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/aa5600f04b915a88b2e5d7c3_rw_1920.jpg?h=82a8fdd7f9b46a15f2017eed2f682d36 1920w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/aa5600f04b915a88b2e5d7c3_rw_3840.jpg?h=dcdfed4c0761a476dedcd24011e6fc7c 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 56.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module" >
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/ae99668127b92ea76d1a63f8.jpg?h=56e3b5689a47636b92a1df6f09efa022">
+           <img
+             class="js-lazy"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/ae99668127b92ea76d1a63f8_rw_3840.jpg?h=f703def6854d48c91ffb603bdb61424c"
+             data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/ae99668127b92ea76d1a63f8_rw_600.jpg?h=4c922cab68a06017f420887b4442cccc 600w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/ae99668127b92ea76d1a63f8_rw_1200.jpg?h=138a2a5e4bb443568e8617b24ca43090 1200w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/ae99668127b92ea76d1a63f8_rw_1920.jpg?h=11fa53877d792c8e351920d146c55b6c 1920w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/ae99668127b92ea76d1a63f8_rw_3840.jpg?h=f703def6854d48c91ffb603bdb61424c 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 56.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module" >
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/718bb0040fa5fc0d6c055f48.jpg?h=dea1a43c806ac9a3b8fa467a5b6e9244">
+           <img
+             class="js-lazy"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/718bb0040fa5fc0d6c055f48_rw_3840.jpg?h=57c26f714fd50d9614b6cc3e13b85d37"
+             data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/718bb0040fa5fc0d6c055f48_rw_600.jpg?h=7930813c482205b24df211c9a2063397 600w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/718bb0040fa5fc0d6c055f48_rw_1200.jpg?h=217013499006424ba1c357e8ea176dd7 1200w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/718bb0040fa5fc0d6c055f48_rw_1920.jpg?h=bd38a017886f52fe4c93c29c4372a532 1920w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/718bb0040fa5fc0d6c055f48_rw_3840.jpg?h=57c26f714fd50d9614b6cc3e13b85d37 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 56.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module" >
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/ef0d1185069f95b6822384c2.jpg?h=c1d7b2817d11797a7ac6dd7a40fd093c">
+           <img
+             class="js-lazy"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/ef0d1185069f95b6822384c2_rw_3840.jpg?h=0dd6ef1fd93613445b1ce799afdf5bfe"
+             data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/ef0d1185069f95b6822384c2_rw_600.jpg?h=f5d648fa3c443ee72e9c59121173de63 600w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/ef0d1185069f95b6822384c2_rw_1200.jpg?h=d65fbbc0509b73784d7e655f076c1d13 1200w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/ef0d1185069f95b6822384c2_rw_1920.jpg?h=6e84c99857aa5f363e6aef37355b17bc 1920w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/ef0d1185069f95b6822384c2_rw_3840.jpg?h=0dd6ef1fd93613445b1ce799afdf5bfe 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 56.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module" >
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/87d804ce37c0b093b53a636f.jpg?h=73ef39e8a16150ef521e9c02090b345c">
+           <img
+             class="js-lazy"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/87d804ce37c0b093b53a636f_rw_3840.jpg?h=b1022fd71e3ad0251c19b70d0bb12b96"
+             data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/87d804ce37c0b093b53a636f_rw_600.jpg?h=c111ca1120da667f18ed3afe984a6ee1 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/87d804ce37c0b093b53a636f_rw_1200.jpg?h=17b81204a4b2e6e448e6998fd94250c8 1200w,https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/87d804ce37c0b093b53a636f_rw_1920.jpg?h=9049caf6e7ce9ad4bac064a5e5a70686 1920w,https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/87d804ce37c0b093b53a636f_rw_3840.jpg?h=b1022fd71e3ad0251c19b70d0bb12b96 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 56.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module video project-module-video editable js-editable js-project-module">
+    <div class="embed-dimensions" style="max-width: 1280px; max-height: 720px; margin: 0 auto;">
+    <div class="embed-aspect-ratio" style="padding-bottom: 56.250000%; position: relative; height: 0px;">
+        <iframe class="embed-content" src="https://www-ccv.adobe.io/v1/player/ccv/-9kSUMf3Jik/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+    </div>
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+          </div>
+        </div>
+      </div>
+    </section>
+          <section class="other-projects js-editable-target editable" data-context="page.page.other_pages">
+            <div class="title-wrapper">
+              <div class="title-container">
+                  <h3 class="other-projects-title preserve-whitespace">You may also like...</h3>
+              </div>
+            </div>
+            <div class="project-covers">
+                  <a class="js-editable-target editable project-cover js-project-cover-touch hold-space" href="/storm-coffee" data-context="pages" data-identity="id:p57a74f945e8c1be368c3d3c4b6ae029f1bcb7a9366e105c1dd075" data-menu="Page Content">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/56b35d41461867.57a76de8dff42_rwc_0x0x1405x1405x32.gif?h=ee3798decf0692da7daf4459fb454f9f"
+              data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/56b35d41461867.57a76de8dff42_rwc_0x0x1405x1405x1405.gif?h=4a836ca0a9aee88f26df1c5643322537"
+              data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/56b35d41461867.57a76de8dff42_rwc_0x0x1405x1405x640.gif?h=55459bc8b8925f027b049d45fbb09ccb 640w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/56b35d41461867.57a76de8dff42_rwc_0x0x1405x1405x1280.gif?h=8b85c663a93c473dd1ad94733d58fa93 1280w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/56b35d41461867.57a76de8dff42_rwc_0x0x1405x1405x1366.gif?h=2f06bb57ae52fc2409224ddcafdf0e3f 1366w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/56b35d41461867.57a76de8dff42_rwc_0x0x1405x1405x1405.gif?h=4a836ca0a9aee88f26df1c5643322537 1920w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/56b35d41461867.57a76de8dff42_rwc_0x0x1405x1405x1405.gif?h=4a836ca0a9aee88f26df1c5643322537 2560w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/56b35d41461867.57a76de8dff42_rwc_0x0x1405x1405x1405.gif?h=4a836ca0a9aee88f26df1c5643322537 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 4)"
+            >
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Storm Coffee Co.</div>
+                              <div class="description">A British initiative led by Dominic Sharman, who aims to introduce the ultimate coffee brewing techniques and best UK-grown coffee beans to the Japanese culture.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="js-editable-target editable project-cover js-project-cover-touch hold-space" href="/barclays-pocketbook" data-context="pages" data-identity="id:p57af7a5e3dcb7816ad3d72665ea5b30edf12a59bf9daee4b648d9" data-menu="Page Content">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/08903a41673697.57af7b6f0271e_rwc_0x0x1405x1405x32.jpg?h=bde3e72dc38d089002f3997bc85d9200"
+              data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/08903a41673697.57af7b6f0271e_rwc_0x0x1405x1405x1405.jpg?h=80e8e392ceb4878a887b9da4747a09fb"
+              data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/08903a41673697.57af7b6f0271e_rwc_0x0x1405x1405x640.jpg?h=0b11f5aa6bb25b2e2fb318aba199e929 640w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/08903a41673697.57af7b6f0271e_rwc_0x0x1405x1405x1280.jpg?h=ded3b35169589bb72a0cd763886efc83 1280w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/08903a41673697.57af7b6f0271e_rwc_0x0x1405x1405x1366.jpg?h=87d7c129b6c72bae554d2e5f95c2d348 1366w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/08903a41673697.57af7b6f0271e_rwc_0x0x1405x1405x1405.jpg?h=80e8e392ceb4878a887b9da4747a09fb 1920w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/08903a41673697.57af7b6f0271e_rwc_0x0x1405x1405x1405.jpg?h=80e8e392ceb4878a887b9da4747a09fb 2560w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/08903a41673697.57af7b6f0271e_rwc_0x0x1405x1405x1405.jpg?h=80e8e392ceb4878a887b9da4747a09fb 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 4)"
+            >
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Barclays Pocketbook</div>
+                              <div class="description">The Barclays Pocketbook was designed to collect and hero the extraordinary anecdotes that happened when Barclays employee go the extra mile. The book was distributed to the 33,000 barclays employees worldwide.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="js-editable-target editable project-cover js-project-cover-touch hold-space" href="/art-catlin-guide-no9" data-context="pages" data-identity="id:p57acc5861a828f5c275300c1082a3d381a3e537b47a4f96e7e2ce" data-menu="Page Content">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/2184b241615707.57acc704d0b91_rwc_0x0x1410x1410x32.jpg?h=5ba7e4ffd03ac0af31511d4bec4debba"
+              data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/2184b241615707.57acc704d0b91_rwc_0x0x1410x1410x1410.jpg?h=93b28b293b9aead66ced42f269c59957"
+              data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/2184b241615707.57acc704d0b91_rwc_0x0x1410x1410x640.jpg?h=0c4b9bdb536d298fbc79ed0a6e9a39d4 640w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/2184b241615707.57acc704d0b91_rwc_0x0x1410x1410x1280.jpg?h=486a9fb52dce3e1d9e00e908974eaba9 1280w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/2184b241615707.57acc704d0b91_rwc_0x0x1410x1410x1366.jpg?h=049c55f27857790b48cc51d8db7fc276 1366w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/2184b241615707.57acc704d0b91_rwc_0x0x1410x1410x1410.jpg?h=93b28b293b9aead66ced42f269c59957 1920w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/2184b241615707.57acc704d0b91_rwc_0x0x1410x1410x1410.jpg?h=93b28b293b9aead66ced42f269c59957 2560w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/2184b241615707.57acc704d0b91_rwc_0x0x1410x1410x1410.jpg?h=93b28b293b9aead66ced42f269c59957 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 4)"
+            >
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Art Catlin Guide no.9</div>
+                              <div class="description">Design for the 9th edition of the Art Catlin Guide, one of the UK's most sought after Art catalogue, curated by Justin Hammond, which presented the 40 most upcoming UK Fine Arts graduates in 2014.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="js-editable-target editable project-cover js-project-cover-touch hold-space" href="/catlin-insurance" data-context="pages" data-identity="id:p57a7841050f7bbe2f139f9f5d3be66636560cbc82716e04b120b3" data-menu="Page Content">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/5c27fe41466335.57a7854c43e04_rwc_0x0x1405x1405x32.gif?h=421434a46e514ce6e72c4cb37e19e32f"
+              data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/5c27fe41466335.57a7854c43e04_rwc_0x0x1405x1405x1405.gif?h=1608ac33224db29398b27274f214f00a"
+              data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/5c27fe41466335.57a7854c43e04_rwc_0x0x1405x1405x640.gif?h=97a24ab17fc7671706600ce995f42c9b 640w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/5c27fe41466335.57a7854c43e04_rwc_0x0x1405x1405x1280.gif?h=280e74faa87ff980f640a888d0d69ef5 1280w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/5c27fe41466335.57a7854c43e04_rwc_0x0x1405x1405x1366.gif?h=e6c7aa265556c8c8b3ee403182a13a81 1366w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/5c27fe41466335.57a7854c43e04_rwc_0x0x1405x1405x1405.gif?h=1608ac33224db29398b27274f214f00a 1920w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/5c27fe41466335.57a7854c43e04_rwc_0x0x1405x1405x1405.gif?h=1608ac33224db29398b27274f214f00a 2560w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/5c27fe41466335.57a7854c43e04_rwc_0x0x1405x1405x1405.gif?h=1608ac33224db29398b27274f214f00a 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 4)"
+            >
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Catlin Insurance</div>
+                              <div class="description">Catlin Insurance first rebrand after 30 years of unchallenged Insurance and Reinsurance expertise.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="js-editable-target editable project-cover js-project-cover-touch hold-space" href="/sustainable-habit-reminders" data-context="pages" data-identity="id:p57b050a5d61d5f607b37c8b2d2901e8a9301ceae6f12c4eca1632" data-menu="Page Content">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/dd60d941685875.57d3e19275717_rwc_0x0x1405x1405x32.jpg?h=2712f5ad29f4bb4593896ea9e7163da2"
+              data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/dd60d941685875.57d3e19275717_rwc_0x0x1405x1405x1405.jpg?h=c5e7b7f7fb3b37837061f6e7b7c577fa"
+              data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/dd60d941685875.57d3e19275717_rwc_0x0x1405x1405x640.jpg?h=3447a6f4e8af7c9650b31e05fa18e6f3 640w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/dd60d941685875.57d3e19275717_rwc_0x0x1405x1405x1280.jpg?h=0a4425af7be12ceb33e00b27afa737e8 1280w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/dd60d941685875.57d3e19275717_rwc_0x0x1405x1405x1366.jpg?h=f17f0dbcc6508ce0afe657773a138eb4 1366w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/dd60d941685875.57d3e19275717_rwc_0x0x1405x1405x1405.jpg?h=c5e7b7f7fb3b37837061f6e7b7c577fa 1920w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/dd60d941685875.57d3e19275717_rwc_0x0x1405x1405x1405.jpg?h=c5e7b7f7fb3b37837061f6e7b7c577fa 2560w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/dd60d941685875.57d3e19275717_rwc_0x0x1405x1405x1405.jpg?h=c5e7b7f7fb3b37837061f6e7b7c577fa 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 4)"
+            >
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Sustainable Habit Reminders</div>
+                              <div class="description">The Sustainable Habit Reminders were a collection of vinyl wall stickers designed to create visual focus around outlets and switches – in order to help people be more aware of their electricity consumption while remaining playful and remind them to switch off devices and lights that were not necessary.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="js-editable-target editable project-cover js-project-cover-touch hold-space" href="/barclays-branch-posters" data-context="pages" data-identity="id:p57af97163833b0d74382a958c39d9d9fe25bc41f66e12e9327452" data-menu="Page Content">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/0ef9ea12-fa15-4108-a7a7-c8f8f55180c0_rwc_0x0x1406x1406x32.jpg?h=f8ed717a2a95dd825bd9d275076eae93"
+              data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/0ef9ea12-fa15-4108-a7a7-c8f8f55180c0_rwc_0x0x1406x1406x1406.jpg?h=97edc82c3803224622a0aefd25478443"
+              data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/0ef9ea12-fa15-4108-a7a7-c8f8f55180c0_rwc_0x0x1406x1406x640.jpg?h=ff8cd8e5cecb9d66baf2a9df3e9d2cc5 640w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/0ef9ea12-fa15-4108-a7a7-c8f8f55180c0_rwc_0x0x1406x1406x1280.jpg?h=13fb134aba1bab930d89f085faea920f 1280w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/0ef9ea12-fa15-4108-a7a7-c8f8f55180c0_rwc_0x0x1406x1406x1366.jpg?h=b2aa07e2a2429b5dd4845f20c6f848a6 1366w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/0ef9ea12-fa15-4108-a7a7-c8f8f55180c0_rwc_0x0x1406x1406x1406.jpg?h=97edc82c3803224622a0aefd25478443 1920w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/0ef9ea12-fa15-4108-a7a7-c8f8f55180c0_rwc_0x0x1406x1406x1406.jpg?h=97edc82c3803224622a0aefd25478443 2560w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/0ef9ea12-fa15-4108-a7a7-c8f8f55180c0_rwc_0x0x1406x1406x1406.jpg?h=97edc82c3803224622a0aefd25478443 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 4)"
+            >
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Barclays Collateral</div>
+                              <div class="description">Barclays branch collateral include posters, category brochures and postcards – all of which were designed with intuitivity in mind: while the photography art direction emphasises clever visual metaphors that played and resonated with the Brand's tone of voice, the brochure content was streamlined in order to half the copy and redirect to online content more efficiently, thus offering a less cluttered, customer-friendly communication support.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="js-editable-target editable project-cover js-project-cover-touch hold-space" href="/breed-london" data-context="pages" data-identity="id:p57af9125ec6b6948e2a3d53d2a276df6f4ed09fbdd84048070e7f" data-menu="Page Content">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/75f83541675407.57af92057fa80_rwc_0x0x1410x1410x32.gif?h=c279a813d16ec6a846478656b8f097e9"
+              data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/75f83541675407.57af92057fa80_rwc_0x0x1410x1410x1410.gif?h=730e974daaced53875bb5e44afe1fab7"
+              data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/75f83541675407.57af92057fa80_rwc_0x0x1410x1410x640.gif?h=a0cd3782fd38344610734ba7547ae4b3 640w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/75f83541675407.57af92057fa80_rwc_0x0x1410x1410x1280.gif?h=5606969a54409b4df51440fc19974a93 1280w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/75f83541675407.57af92057fa80_rwc_0x0x1410x1410x1366.gif?h=e6082f7d54daa13b681da43ad5a566bf 1366w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/75f83541675407.57af92057fa80_rwc_0x0x1410x1410x1410.gif?h=730e974daaced53875bb5e44afe1fab7 1920w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/75f83541675407.57af92057fa80_rwc_0x0x1410x1410x1410.gif?h=730e974daaced53875bb5e44afe1fab7 2560w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/75f83541675407.57af92057fa80_rwc_0x0x1410x1410x1410.gif?h=730e974daaced53875bb5e44afe1fab7 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 4)"
+            >
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Breed London</div>
+                              <div class="description">Printed collateral for Breed London, a talent agency that represents both world-renowned illustrators and photographers, such as Si Scott, James Joyce, Kate Moross or Steven Wilson.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="js-editable-target editable project-cover js-project-cover-touch hold-space" href="/macbook-stickers" data-context="pages" data-identity="id:p57b04b57d45acb5bfe8f052cc5c65a6a5577e4a68b033217b7a52" data-menu="Page Content">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/3aa0ea41685601.57b04d621ec4f_rwc_0x0x1405x1405x32.jpg?h=5975d26cdb29952668f2ebc8a014e742"
+              data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/3aa0ea41685601.57b04d621ec4f_rwc_0x0x1405x1405x1405.jpg?h=17e7562d18fc15a84f335895d1e2985b"
+              data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/3aa0ea41685601.57b04d621ec4f_rwc_0x0x1405x1405x640.jpg?h=c8193da9afba103a110047413fb22dee 640w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/3aa0ea41685601.57b04d621ec4f_rwc_0x0x1405x1405x1280.jpg?h=1a18c271480f86e17aa293113d173d61 1280w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/3aa0ea41685601.57b04d621ec4f_rwc_0x0x1405x1405x1366.jpg?h=d39dbac45fd26444272149a9ef296ba0 1366w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/3aa0ea41685601.57b04d621ec4f_rwc_0x0x1405x1405x1405.jpg?h=17e7562d18fc15a84f335895d1e2985b 1920w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/3aa0ea41685601.57b04d621ec4f_rwc_0x0x1405x1405x1405.jpg?h=17e7562d18fc15a84f335895d1e2985b 2560w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/3aa0ea41685601.57b04d621ec4f_rwc_0x0x1405x1405x1405.jpg?h=17e7562d18fc15a84f335895d1e2985b 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 4)"
+            >
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">MacBook Stickers</div>
+                              <div class="description">A vinyl sticker collection destined to raise awareness of our ever-expanding electricity consumption... Starting with a device we all use on a daily basis: the laptop.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="js-editable-target editable project-cover js-project-cover-touch hold-space" href="/coca-cola-freestyle" data-context="pages" data-identity="id:p58383a15be95d9c58a8ca41b0aab56d033b27e31c6a93e3e1f572" data-menu="Page Content">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/b4bb7345660113.58383ba0a5ce7_rwc_0x0x602x602x32.jpg?h=b142c4ab7aff4b76616a63826817f607"
+              data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/b4bb7345660113.58383ba0a5ce7_rwc_0x0x602x602x602.jpg?h=9d1792f971b8056a4d5f43567ac21b9a"
+              data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/b4bb7345660113.58383ba0a5ce7_rwc_0x0x602x602x602.jpg?h=9d1792f971b8056a4d5f43567ac21b9a 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/b4bb7345660113.58383ba0a5ce7_rwc_0x0x602x602x602.jpg?h=9d1792f971b8056a4d5f43567ac21b9a 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/b4bb7345660113.58383ba0a5ce7_rwc_0x0x602x602x602.jpg?h=9d1792f971b8056a4d5f43567ac21b9a 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/b4bb7345660113.58383ba0a5ce7_rwc_0x0x602x602x602.jpg?h=9d1792f971b8056a4d5f43567ac21b9a 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/b4bb7345660113.58383ba0a5ce7_rwc_0x0x602x602x602.jpg?h=9d1792f971b8056a4d5f43567ac21b9a 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/b4bb7345660113.58383ba0a5ce7_rwc_0x0x602x602x602.jpg?h=9d1792f971b8056a4d5f43567ac21b9a 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 4)"
+            >
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Coca-Cola Freestyle</div>
+                              <div class="description">The Coca-Cola Freestyle Identity aimed to better connect with millenials by ensuring strong messaging and consistency across a wide array of touchpoints on various points of sale. 
+
+The 'bubbles' illustrations become a key element that heroes the variety of drinks available, while making it very easy to recommend specific, surprising or classic combinations. The Coca-Cola Freestyle machine therefore becomes a modern-day fountain, that responds to the customer's growing desire for customisation, and a playful platform for discovering the range of Coca-Cola products</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="js-editable-target editable project-cover js-project-cover-touch hold-space" href="/holiday-inn-rebrand" data-context="pages" data-identity="id:p57d41ebf12a36816e3c8e5a48d77bfea6c5d76483d144ac76a436" data-menu="Page Content">
+                    <div class="cover-content-container">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/204be542694763.57d41ff47ae5b_rwc_0x0x1405x1405x32.gif?h=141b29a319553e9e0d8c1ad21408ef8d"
+              data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/204be542694763.57d41ff47ae5b_rwc_0x0x1405x1405x1405.gif?h=e450f750c889039e4ff1aa51dbbca1b3"
+              data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/204be542694763.57d41ff47ae5b_rwc_0x0x1405x1405x640.gif?h=04c6d00fe229ce196bac47d132bbc09b 640w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/204be542694763.57d41ff47ae5b_rwc_0x0x1405x1405x1280.gif?h=27099cc62cebe09bedae46c318215eff 1280w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/204be542694763.57d41ff47ae5b_rwc_0x0x1405x1405x1366.gif?h=2c76b6d6a0cd675208b40bc42218bb4a 1366w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/204be542694763.57d41ff47ae5b_rwc_0x0x1405x1405x1405.gif?h=e450f750c889039e4ff1aa51dbbca1b3 1920w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/204be542694763.57d41ff47ae5b_rwc_0x0x1405x1405x1405.gif?h=e450f750c889039e4ff1aa51dbbca1b3 2560w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/b6394e3a1b3e0b0ea48ae862c90a3369/204be542694763.57d41ff47ae5b_rwc_0x0x1405x1405x1405.gif?h=e450f750c889039e4ff1aa51dbbca1b3 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1400px / 4)"
+            >
+                                      </div>
+                        </div>
+                      </div>
+                      <div class="details-wrap">
+                        <div class="details">
+                          <div class="details-inner">
+                              <div class="title preserve-whitespace">Holiday Inn Rebrand</div>
+                              <div class="description">Rebrand for Holiday Inn following the development of a new business strategy for IHG, aiming to modernise brand presence globally and through all touchpoints, from print to outdoor signage.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+            </div>
+          </section>
+  </div>
+              <footer class="site-footer js-editable-target editable">
+                  <div class="social pf-footer-social">
+                    <ul>
+                            <li>
+                <a href="https://twitter.com/Eduroes" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 30 24" xml:space="preserve" class="icon"><path d="M24.71 5.89C24 6.2 23.2 6.4 22.4 6.53c0.82-0.5 1.45-1.29 1.75-2.23c-0.77 0.46-1.62 0.8-2.53 1 C20.92 4.5 19.9 4 18.7 4c-2.2 0-3.99 1.81-3.99 4.04c0 0.3 0 0.6 0.1 0.92C11.54 8.8 8.6 7.2 6.6 4.7 C6.3 5.3 6.1 6 6.1 6.77c0 1.4 0.7 2.6 1.8 3.36c-0.65-0.02-1.27-0.2-1.81-0.51c0 0 0 0 0 0.1 c0 2 1.4 3.6 3.2 3.96c-0.34 0.09-0.69 0.14-1.05 0.14c-0.26 0-0.51-0.03-0.75-0.07c0.51 1.6 2 2.8 3.7 2.8 c-1.36 1.08-3.08 1.73-4.95 1.73c-0.32 0-0.64-0.02-0.95-0.06C7.05 19.3 9.1 20 11.4 20c7.33 0 11.34-6.15 11.34-11.49 c0-0.18 0-0.35-0.01-0.52C23.5 7.4 24.2 6.7 24.7 5.89z" /></svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/eduardoroblesespinosa/" target="_blank">
+                  <svg version="1.1" id="Svg3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                  <path id="path3" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
+                                c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
+                                C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z" />
+
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/eduardo.r.espinosa.9/" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 30 24" xml:space="preserve" class="icon"><path d="M16.21 20h-3.26v-8h-1.63V9.24h1.63V7.59c0-2.25 0.92-3.59 3.53-3.59h2.17v2.76H17.3 c-1.02 0-1.08 0.39-1.08 1.11l0 1.38h2.46L18.38 12h-2.17V20z" /></svg>
+                </a>
+              </li>
+                    </ul>
+                  </div>
+                <div class="footer-text">
+                  All works copyright © Eduardo Robles 2016 | 2022<br><a href="mailto:eduardo.robles@monarcacm.com.mx" style="color:#f3c3cc;">Contact: eduardo.robles@monarcacm.com.mx</a>
+                </div>
+              </footer>
+        </main>
+      </div>
+    </div>
+  </div>
+<div class="cookie-banner js-cookie-banner">
+  <p>Insert copy here, which should vary depending on your region. <a class="consent-link" href="#">Accept</a></p>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6458 -2604 16 16" class='close-btn'>
+    <g id="Group_1479" data-name="Group 1479" transform="translate(-8281.367 -3556.368)">
+      <rect id="Rectangle_6401" data-name="Rectangle 6401" class="stroke" width="1.968" height="20.66" transform="translate(1823.367 953.759) rotate(-45)"/>
+      <rect id="Rectangle_6402" data-name="Rectangle 6402" class="stroke" width="1.968" height="20.66" transform="translate(1824.758 968.368) rotate(-135)"/>
+    </g>
+  </svg>
+</div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"e7fb1b89a0","applicationID":"750147145","transactionName":"ZwZaYkJVDERXUxULCV5Me0NDQA1aGWsmJzJtQxdtS0QDQ14KT0gbbQ==","queueTime":0,"applicationTime":15,"atts":"S0FNFApPHxsUUUNYHU0e","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+<script type="text/javascript">
+  // fix for Safari's back/forward cache
+  window.onpageshow = function(e) {
+    if (e.persisted) { window.location.reload(); }
+  };
+</script>
+  <script type="text/javascript">var __config__ = {"page_id":"p57af8949df95fc7162857e4db3cf6af0f1c60f9219905d1edd817","theme":{"name":"geometric"},"pageTransition":true,"linkTransition":true,"disableDownload":true,"localizedValidationMessages":{"required":"This field is required","Email":"This field must be a valid email address"},"lightbox":{"enabled":false},"cookie_banner":{"enabled":false},"googleAnalytics":{"trackingCode":"UA-15137601-1","anonymization":false}};</script>
+  <script type="text/javascript" src="https://romainferrer.com/site/translations?cb="></script>
+<script type="text/javascript" src="https://romainferrer.com/dist/js/main.js?cb="></script>
+</html>
